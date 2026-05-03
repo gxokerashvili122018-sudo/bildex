@@ -1,7 +1,5 @@
 import type { Post, PostsConnection, Category } from '~/types/content'
 
-// ─── Tipos internos de Strapi ────────────────────────────────────────────────
-
 interface StrapiCover {
   url: string
 }
@@ -31,37 +29,9 @@ interface StrapiResponse<T> {
   meta: StrapiMeta
 }
 
-// ─── Cliente Strapi ──────────────────────────────────────────────────────────
-
 async function strapiGet<T>(path: string): Promise<StrapiResponse<T>> {
-  const config = useRuntimeConfig()
-  const userToken = useCookie<string | null>('auth_token')
-
-  const headers: Record<string, string> = {}
-
-  if (userToken.value) {
-    // Pasa el JWT al proxy para que Strapi filtre por rol
-    headers['Authorization'] = `Bearer ${userToken.value}`
-    // Señal para que el proxy use bucket 'auth' con TTL corto (2 min)
-    headers['X-Authenticated'] = '1'
-  }
-
-  return $fetch<StrapiResponse<T>>(`/api/strapi/${path}`, { headers })
+  return $fetch<StrapiResponse<T>>(`/api/strapi/${path}`)
 }
-
-/**
- * Fetch autenticado con el JWT del usuario (para contenido restringido).
- */
-async function strapiGetAuth<T>(path: string, token: string): Promise<StrapiResponse<T>> {
-  const config = useRuntimeConfig()
-  return $fetch<StrapiResponse<T>>(`${config.public.strapiUrl}/api/${path}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-  })
-}
-
-// ─── Mapear Strapi → interfaz Post (compatible con el resto de la app) ───────
 
 function mapPost(item: StrapiPost): Post {
   return {
@@ -71,18 +41,12 @@ function mapPost(item: StrapiPost): Post {
     content: item.content ?? '',
     excerpt: item.excerpt ?? '',
     date: item.publishedAt ?? '',
-    // Mapeamos cover de Strapi/Cloudinary al formato que usan los templates
     featuredImage: item.cover?.url
       ? { node: { sourceUrl: item.cover.url } }
       : null,
   }
 }
 
-// ─── Funciones públicas ──────────────────────────────────────────────────────
-
-/**
- * Posts para el homepage según el idioma actual.
- */
 export async function getHomePosts(locale: string): Promise<Post[]> {
   const endpoint = locale === 'es' ? 'entradas' : 'georgians'
   const res = await strapiGet<StrapiPost[]>(
@@ -91,10 +55,6 @@ export async function getHomePosts(locale: string): Promise<Post[]> {
   return (res.data ?? []).map(mapPost)
 }
 
-/**
- * Posts paginados por categoría (ES).
- * Usa paginación por página en vez de cursores; endCursor = número de página siguiente.
- */
 export async function getPostsByCategory(
   slug: string,
   first = 9,
@@ -114,9 +74,6 @@ export async function getPostsByCategory(
   }
 }
 
-/**
- * Posts paginados por geocategoría (GE).
- */
 export async function getGeoPostsByCategory(
   slug: string,
   first = 9,
@@ -136,9 +93,6 @@ export async function getGeoPostsByCategory(
   }
 }
 
-/**
- * Post individual por slug (ES).
- */
 export async function getPostBySlug(slug: string): Promise<Post | null> {
   const res = await strapiGet<StrapiPost[]>(
     `entradas?filters[slug][$eq]=${slug}&populate=cover`,
@@ -147,9 +101,6 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
   return items.length ? mapPost(items[0]) : null
 }
 
-/**
- * Geo-post individual por slug (GE).
- */
 export async function getGeoPostBySlug(slug: string): Promise<Post | null> {
   const res = await strapiGet<StrapiPost[]>(
     `georgians?filters[slug][$eq]=${slug}&populate=cover`,
@@ -158,9 +109,6 @@ export async function getGeoPostBySlug(slug: string): Promise<Post | null> {
   return items.length ? mapPost(items[0]) : null
 }
 
-/**
- * Todas las categorías (para generar rutas estáticas).
- */
 export async function getAllCategories(): Promise<Category[]> {
   const [esRes, geRes] = await Promise.all([
     strapiGet<Category[]>('entrada-categories?fields[0]=name&fields[1]=slug&pagination[pageSize]=100'),
@@ -175,33 +123,6 @@ export async function getAllCategories(): Promise<Category[]> {
   })
 }
 
-/**
- * Posts para miembros autenticados según idioma (usa JWT del usuario).
- */
-export async function getMemberPosts(locale: string, token: string): Promise<Post[]> {
-  const endpoint = locale === 'es' ? 'entradas' : 'georgians'
-  const res = await strapiGetAuth<StrapiPost[]>(
-    `${endpoint}?populate=cover&sort=publishedAt:desc`,
-    token,
-  )
-  return (res.data ?? []).map(mapPost)
-}
-
-/**
- * Posts para suscriptores VIP según idioma (usa JWT del usuario).
- */
-export async function getSubscriberPosts(locale: string, token: string): Promise<Post[]> {
-  const endpoint = locale === 'es' ? 'entradas' : 'georgians'
-  const res = await strapiGetAuth<StrapiPost[]>(
-    `${endpoint}?filters[acceso][$eq]=suscriptores&populate=cover&sort=publishedAt:desc`,
-    token,
-  )
-  return (res.data ?? []).map(mapPost)
-}
-
-/**
- * Todos los slugs de posts (para generar rutas estáticas).
- */
 export async function getAllPostSlugs(): Promise<string[]> {
   const [esRes, geRes] = await Promise.all([
     strapiGet<{ slug: string }[]>('entradas?fields[0]=slug&pagination[pageSize]=1000'),

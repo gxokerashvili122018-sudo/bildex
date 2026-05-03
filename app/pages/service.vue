@@ -1,7 +1,7 @@
 <template>
   <div>
     <PageHero
-      eyebrow="Iberia"
+      eyebrow="Bildex"
       :title="$t('service')"
       :subtitle="$t('service1')"
     />
@@ -16,7 +16,7 @@
             class="flex gap-6 py-10 first:pt-0 last:pb-0"
           >
             <!-- Icon -->
-            <div class="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-iberia/8 text-iberia">
+            <div class="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-bildex/8 text-bildex">
               <component :is="service.icon" class="size-7" />
             </div>
 
@@ -37,7 +37,7 @@
         <p class="mt-3 text-zinc-500">{{ $t('contact2') }}</p>
         <NuxtLink
           :to="localePath('/contact')"
-          class="mt-8 inline-flex items-center gap-2 rounded-xl bg-iberia px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-iberia-dark"
+          class="mt-8 inline-flex items-center gap-2 rounded-xl bg-bildex px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-bildex-dark"
         >
           {{ $t('contactus') }}
           <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -60,7 +60,7 @@ const url = useRequestURL()
 const OG_IMAGE = 'https://res.cloudinary.com/dj6draudd/image/upload/v1771671526/contact_scaled_8ca2bf7adb.jpg'
 
 useSeoMeta({
-  title: `${t('service')} — Iberia`,
+  title: `${t('service')} — Bildex`,
   description: t('service1'),
   ogTitle: t('service'),
   ogDescription: t('service1'),

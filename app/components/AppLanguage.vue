@@ -10,7 +10,7 @@
       class="rounded-full px-2.5 py-1 font-medium transition-colors"
       :class="
         locale === loc.code
-          ? 'bg-iberia text-white'
+          ? 'bg-bildex text-white'
           : dark
             ? 'text-white/70 hover:text-white'
             : 'text-zinc-500 hover:text-zinc-800'

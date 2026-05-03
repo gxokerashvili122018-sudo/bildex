@@ -11,7 +11,7 @@ const OG_DEFAULT = 'https://res.cloudinary.com/dj6draudd/image/upload/v177167152
 
 // Defaults globales — cada página sobreescribe los suyos
 useSeoMeta({
-  ogSiteName: 'Iberia',
+  ogSiteName: 'Bildex',
   ogType: 'website',
   ogImage: OG_DEFAULT,
   ogImageWidth: 1200,

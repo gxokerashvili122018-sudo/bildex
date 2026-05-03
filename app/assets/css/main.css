@@ -1,10 +1,10 @@
 @import "tailwindcss";
 
 @theme {
-  /* Colores de marca Iberia */
-  --color-iberia: #c8102e;
-  --color-iberia-dark: #a00d24;
-  --color-iberia-light: #f5e6e9;
+  /* Colores de marca Bildex */
+  --color-bildex: #c8102e;
+  --color-bildex-dark: #a00d24;
+  --color-bildex-light: #f5e6e9;
 
   /* Neutros */
   --color-surface: #fafafa;
@@ -65,7 +65,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .cms-content a {
-  color: var(--color-iberia);
+  color: var(--color-bildex);
   text-decoration: underline;
   text-underline-offset: 3px;
 }

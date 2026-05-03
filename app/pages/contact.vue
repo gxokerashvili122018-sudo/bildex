@@ -1,7 +1,7 @@
 <template>
   <div>
     <PageHero
-      eyebrow="Iberia"
+      eyebrow="Bildex"
       :title="$t('contact1')"
       :subtitle="$t('contact2')"
     />
@@ -16,31 +16,31 @@
 
             <div class="mt-8 space-y-6">
               <div class="flex items-start gap-4">
-                <div class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-iberia/10">
-                  <svg class="size-5 text-iberia" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <div class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-bildex/10">
+                  <svg class="size-5 text-bildex" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/>
                   </svg>
                 </div>
                 <div>
                   <p class="text-sm font-medium text-zinc-500">{{ $t('contactemail') }}</p>
-                  <a href="mailto:asociacioniberia@gmail.com" class="mt-0.5 font-medium text-zinc-800 hover:text-iberia transition-colors">
-                    asociacioniberia@gmail.com
+                  <a href="mailto:info@bildex.com" class="mt-0.5 font-medium text-zinc-800 hover:text-bildex transition-colors">
+                    info@bildex.com
                   </a>
                 </div>
               </div>
 
               <div class="flex items-start gap-4">
-                <div class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-iberia/10">
-                  <svg class="size-5 text-iberia" viewBox="0 0 24 24" fill="currentColor">
+                <div class="flex size-10 shrink-0 items-center justify-center rounded-xl bg-bildex/10">
+                  <svg class="size-5 text-bildex" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
                   </svg>
                 </div>
                 <div>
                   <p class="text-sm font-medium text-zinc-500">{{ $t('contactphone') }}</p>
                   <div class="mt-0.5 space-y-1">
-                    <a href="tel:+995599634393" class="block font-medium text-zinc-800 hover:text-iberia transition-colors">+995 599 634 393</a>
-                    <a href="tel:+995568618086" class="block font-medium text-zinc-800 hover:text-iberia transition-colors">+995 568 61 80 86</a>
-                    <a href="tel:+34722512017" class="block font-medium text-zinc-800 hover:text-iberia transition-colors">+34 722 512 017</a>
+                    <a href="tel:+995599634393" class="block font-medium text-zinc-800 hover:text-bildex transition-colors">+995 599 634 393</a>
+                    <a href="tel:+995568618086" class="block font-medium text-zinc-800 hover:text-bildex transition-colors">+995 568 61 80 86</a>
+                    <a href="tel:+34722512017" class="block font-medium text-zinc-800 hover:text-bildex transition-colors">+34 722 512 017</a>
                   </div>
                 </div>
               </div>
@@ -72,7 +72,7 @@
                   type="text"
                   required
                   :placeholder="`${$t('contacttu')} ${$t('contactname')}`"
-                  class="mt-1.5 w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-800 outline-none transition-all placeholder:text-zinc-400 focus:border-iberia focus:ring-2 focus:ring-iberia/10"
+                  class="mt-1.5 w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-800 outline-none transition-all placeholder:text-zinc-400 focus:border-bildex focus:ring-2 focus:ring-bildex/10"
                 />
               </div>
 
@@ -86,7 +86,7 @@
                   type="email"
                   required
                   :placeholder="`${$t('contacttu')} ${$t('contactemail')}`"
-                  class="mt-1.5 w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-800 outline-none transition-all placeholder:text-zinc-400 focus:border-iberia focus:ring-2 focus:ring-iberia/10"
+                  class="mt-1.5 w-full rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-800 outline-none transition-all placeholder:text-zinc-400 focus:border-bildex focus:ring-2 focus:ring-bildex/10"
                 />
               </div>
 
@@ -100,7 +100,7 @@
                   rows="6"
                   required
                   :placeholder="$t('contacttext')"
-                  class="mt-1.5 w-full resize-none rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-800 outline-none transition-all placeholder:text-zinc-400 focus:border-iberia focus:ring-2 focus:ring-iberia/10"
+                  class="mt-1.5 w-full resize-none rounded-xl border border-zinc-200 px-4 py-3 text-sm text-zinc-800 outline-none transition-all placeholder:text-zinc-400 focus:border-bildex focus:ring-2 focus:ring-bildex/10"
                 />
               </div>
 
@@ -111,7 +111,7 @@
                   role="checkbox"
                   :aria-checked="form.accepted"
                   class="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded border-2 transition-all"
-                  :class="form.accepted ? 'border-iberia bg-iberia' : 'border-zinc-300'"
+                  :class="form.accepted ? 'border-bildex bg-bildex' : 'border-zinc-300'"
                   @click="form.accepted = !form.accepted"
                 >
                   <svg v-if="form.accepted" class="size-3 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -120,7 +120,7 @@
                 </button>
                 <p class="text-sm text-zinc-600">
                   {{ $t('contact3') }}
-                  <NuxtLink :to="localePath('/politica-de-privacidad')" class="text-iberia underline underline-offset-2">
+                  <NuxtLink :to="localePath('/politica-de-privacidad')" class="text-bildex underline underline-offset-2">
                     {{ $t('contactprivacity') }}
                   </NuxtLink>
                 </p>
@@ -138,7 +138,7 @@
                 type="submit"
                 :disabled="loading || !form.accepted"
                 class="flex w-full items-center justify-center gap-2 rounded-xl py-3 text-sm font-semibold transition-all disabled:cursor-not-allowed disabled:opacity-50"
-                :class="form.accepted ? 'bg-iberia text-white hover:bg-iberia-dark' : 'bg-zinc-100 text-zinc-400'"
+                :class="form.accepted ? 'bg-bildex text-white hover:bg-bildex-dark' : 'bg-zinc-100 text-zinc-400'"
               >
                 <template v-if="loading">
                   <svg class="size-4 animate-spin" viewBox="0 0 24 24" fill="none">
@@ -170,7 +170,7 @@ const url = useRequestURL()
 const OG_IMAGE = 'https://res.cloudinary.com/dj6draudd/image/upload/v1771671526/contact_scaled_8ca2bf7adb.jpg'
 
 useSeoMeta({
-  title: `${t('contact1')} — Iberia`,
+  title: `${t('contact1')} — Bildex`,
   description: t('contact2'),
   ogTitle: t('contact1'),
   ogDescription: t('contact2'),

@@ -15,8 +15,8 @@
 
           <!-- Left: Mission -->
           <div>
-            <div class="flex size-12 items-center justify-center rounded-2xl bg-iberia/10">
-              <svg class="size-6 text-iberia" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <div class="flex size-12 items-center justify-center rounded-2xl bg-bildex/10">
+              <svg class="size-6 text-bildex" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="12" cy="12" r="10"/>
                 <line x1="2" y1="12" x2="22" y2="12"/>
                 <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
@@ -30,8 +30,8 @@
 
           <!-- Right: Origin -->
           <div>
-            <div class="flex size-12 items-center justify-center rounded-2xl bg-iberia/10">
-              <svg class="size-6 text-iberia" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+            <div class="flex size-12 items-center justify-center rounded-2xl bg-bildex/10">
+              <svg class="size-6 text-bildex" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
                 <polyline points="9 22 9 12 15 12 15 22"/>
               </svg>
@@ -50,7 +50,7 @@
     <section class="bg-zinc-50 py-20 lg:py-28">
       <div class="container mx-auto px-4 lg:px-6">
         <div class="mb-14 text-center">
-          <p class="text-sm font-semibold tracking-wider text-iberia uppercase">
+          <p class="text-sm font-semibold tracking-wider text-bildex uppercase">
             {{ locale === 'es' ? 'Lo que nos define' : 'ჩვენი ღირებულებები' }}
           </p>
           <h2 class="mt-3 text-3xl font-bold text-zinc-800">
@@ -64,8 +64,8 @@
             :key="value.titleEs"
             class="rounded-2xl bg-white p-8"
           >
-            <div class="flex size-11 items-center justify-center rounded-xl bg-iberia/10">
-              <component :is="value.icon" class="size-5 text-iberia" />
+            <div class="flex size-11 items-center justify-center rounded-xl bg-bildex/10">
+              <component :is="value.icon" class="size-5 text-bildex" />
             </div>
             <h3 class="mt-5 font-semibold text-zinc-800">
               {{ locale === 'es' ? value.titleEs : value.titleGe }}
@@ -82,7 +82,7 @@
     <section class="py-20 lg:py-24">
       <div class="container mx-auto px-4 lg:px-6">
         <div class="mx-auto max-w-2xl text-center">
-          <p class="text-sm font-semibold tracking-wider text-iberia uppercase">
+          <p class="text-sm font-semibold tracking-wider text-bildex uppercase">
             {{ locale === 'es' ? 'En detalle' : 'დეტალურად' }}
           </p>
           <div
@@ -95,8 +95,8 @@
 
     <!-- Team CTA -->
     <section class="relative overflow-hidden bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 py-20">
-      <div class="absolute -left-40 -top-40 size-96 rounded-full bg-iberia/15 blur-3xl" />
-      <div class="absolute -bottom-20 -right-20 size-64 rounded-full bg-iberia/10 blur-3xl" />
+      <div class="absolute -left-40 -top-40 size-96 rounded-full bg-bildex/15 blur-3xl" />
+      <div class="absolute -bottom-20 -right-20 size-64 rounded-full bg-bildex/10 blur-3xl" />
       <div class="absolute left-1/2 top-1/2 size-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-yellow-400/6 blur-3xl" />
       <div class="container relative mx-auto px-4 text-center lg:px-6">
         <h2 class="text-3xl font-bold text-white">{{ $t('aboutus4') }}</h2>
@@ -131,7 +131,7 @@ const url = useRequestURL()
 const OG_IMAGE = 'https://res.cloudinary.com/dj6draudd/image/upload/v1771671526/contact_scaled_8ca2bf7adb.jpg'
 
 useSeoMeta({
-  title: `${t('aboutus')} — Iberia`,
+  title: `${t('aboutus')} — Bildex`,
   description: t('aboutus7'),
   ogTitle: t('aboutus'),
   ogDescription: t('aboutus7'),

@@ -12,7 +12,7 @@
     <div v-else-if="!post" class="flex min-h-[50vh] flex-col items-center justify-center px-4 text-center">
       <p class="text-5xl font-bold text-zinc-200">404</p>
       <h1 class="mt-4 text-xl font-semibold text-zinc-700">{{ $t('nofound') }}</h1>
-      <NuxtLink :to="localePath('/')" class="mt-6 text-sm font-medium text-iberia hover:underline">
+      <NuxtLink :to="localePath('/')" class="mt-6 text-sm font-medium text-bildex hover:underline">
         {{ $t('nofound3') }}
       </NuxtLink>
     </div>
@@ -22,8 +22,8 @@
 
       <!-- Hero header -->
       <section class="relative overflow-hidden bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 pb-20 pt-36">
-        <div class="absolute -right-40 -top-40 size-96 rounded-full bg-iberia/20 blur-3xl" />
-        <div class="absolute -bottom-20 -left-20 size-64 rounded-full bg-iberia/10 blur-3xl" />
+        <div class="absolute -right-40 -top-40 size-96 rounded-full bg-bildex/20 blur-3xl" />
+        <div class="absolute -bottom-20 -left-20 size-64 rounded-full bg-bildex/10 blur-3xl" />
         <div class="absolute -right-24 top-1/2 size-72 -translate-y-1/2 rounded-full bg-yellow-400/8 blur-3xl" />
         <div class="container relative mx-auto max-w-3xl px-4 lg:px-6">
           <!-- Breadcrumb -->
@@ -69,11 +69,9 @@
             v-else
             class="flex aspect-video items-center justify-center bg-zinc-100"
           >
-            <img
-              src="https://res.cloudinary.com/dj6draudd/image/upload/v1771671543/logo_iberia_icon_b2924031c3.svg"
-              alt="Iberia"
-              class="size-16 opacity-20"
-            />
+            <span class="flex size-16 items-center justify-center rounded-xl bg-bildex/10 text-2xl font-bold text-bildex/30">
+              B
+            </span>
           </div>
         </div>
       </div>
@@ -89,7 +87,7 @@
         <div class="mt-16 border-t border-zinc-100 pt-8">
           <NuxtLink
             :to="localePath({ name: 'category-slug', params: { slug: 'news' } })"
-            class="inline-flex items-center gap-2 text-sm font-medium text-iberia hover:gap-3 transition-all"
+            class="inline-flex items-center gap-2 text-sm font-medium text-bildex hover:gap-3 transition-all"
           >
             <svg class="size-4 rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7"/>
@@ -138,7 +136,7 @@ onMounted(() => {
 
 const url = useRequestURL()
 
-const postTitle = computed(() => post.value?.title ?? 'Iberia')
+const postTitle = computed(() => post.value?.title ?? 'Bildex')
 const postDescription = computed(() =>
   post.value?.excerpt
     ? post.value.excerpt.replace(/<[^>]+>/g, '').trim()
@@ -150,7 +148,7 @@ const postImage = computed(() =>
 )
 
 useSeoMeta({
-  title: computed(() => `${postTitle.value} — Iberia`),
+  title: computed(() => `${postTitle.value} — Bildex`),
   description: postDescription,
   ogTitle: postTitle,
   ogDescription: postDescription,
@@ -177,7 +175,7 @@ useHead({
       inLanguage: locale.value === 'ge' ? 'ka' : 'es',
       publisher: {
         '@type': 'Organization',
-        name: 'Iberia',
+        name: 'Bildex',
         logo: {
           '@type': 'ImageObject',
           url: 'https://res.cloudinary.com/dj6draudd/image/upload/v1771671618/logo_1404f77b5f.png',

@@ -7,20 +7,10 @@
         <!-- Brand + social -->
         <div class="lg:col-span-1">
           <NuxtLink :to="localePath('/')" class="inline-flex items-center gap-3">
-            <img
-              src="https://res.cloudinary.com/dj6draudd/image/upload/v1771671543/logo_iberia_icon_b2924031c3.svg"
-              alt="Iberia"
-              width="40"
-              height="40"
-              class="size-10 brightness-0 invert"
-            />
-            <img
-              src="https://res.cloudinary.com/dj6draudd/image/upload/v1771671557/logo_iberia_text_1_9fda9ff279.svg"
-              alt="Iberia"
-              width="110"
-              height="32"
-              class="h-8 w-auto brightness-0 invert"
-            />
+            <span class="flex size-10 items-center justify-center rounded-lg bg-bildex text-base font-bold text-white">
+              B
+            </span>
+            <span class="font-display text-xl font-bold text-white">Bildex</span>
           </NuxtLink>
 
           <p class="mt-4 text-sm leading-relaxed text-zinc-500">
@@ -33,18 +23,18 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              class="flex size-8 items-center justify-center rounded-full bg-zinc-800 text-zinc-400 transition-colors hover:bg-iberia hover:text-white"
+              class="flex size-8 items-center justify-center rounded-full bg-zinc-800 text-zinc-400 transition-colors hover:bg-bildex hover:text-white"
             >
               <svg class="size-4" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
               </svg>
             </a>
             <a
-              href="https://youtube.com/user/asociacioniberia"
+              href="https://youtube.com/user/bildex"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
-              class="flex size-8 items-center justify-center rounded-full bg-zinc-800 text-zinc-400 transition-colors hover:bg-iberia hover:text-white"
+              class="flex size-8 items-center justify-center rounded-full bg-zinc-800 text-zinc-400 transition-colors hover:bg-bildex hover:text-white"
             >
               <svg class="size-4" viewBox="0 0 24 24" fill="currentColor">
                 <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
@@ -95,13 +85,13 @@
           <ul class="space-y-3">
             <li>
               <a
-                href="mailto:asociacioniberia@gmail.com"
+                href="mailto:info@Bildex.com"
                 class="flex items-center gap-2 text-sm transition-colors hover:text-white"
               >
                 <svg class="size-4 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/>
                 </svg>
-                asociacioniberia@gmail.com
+                info@Bildex.com
               </a>
             </li>
             <li>
@@ -130,7 +120,7 @@
     <!-- Bottom bar -->
     <div class="border-t border-zinc-800">
       <div class="container mx-auto flex flex-col items-center justify-between gap-3 px-4 py-5 text-xs sm:flex-row lg:px-6">
-        <p>© {{ new Date().getFullYear() }} iberiainfo.org. Todos los derechos reservados.</p>
+        <p>© {{ new Date().getFullYear() }} Bildex.com. Todos los derechos reservados.</p>
         <div class="flex items-center gap-4">
           <NuxtLink :to="localePath('/politica-de-privacidad')" class="transition-colors hover:text-white">
             {{ $t('privacypolicy') }}

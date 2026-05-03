@@ -43,7 +43,7 @@
           <div v-if="hasNextPage" class="mt-12 flex justify-center">
             <button
               :disabled="loadingMore"
-              class="inline-flex items-center gap-2 rounded-xl border border-zinc-200 px-8 py-3 text-sm font-medium text-zinc-600 transition-all hover:border-iberia hover:text-iberia disabled:opacity-50"
+              class="inline-flex items-center gap-2 rounded-xl border border-zinc-200 px-8 py-3 text-sm font-medium text-zinc-600 transition-all hover:border-bildex hover:text-bildex disabled:opacity-50"
               @click="loadMore"
             >
               <svg v-if="loadingMore" class="size-4 animate-spin" viewBox="0 0 24 24" fill="none">
@@ -144,7 +144,7 @@ const url = useRequestURL()
 const OG_IMAGE = 'https://res.cloudinary.com/dj6draudd/image/upload/v1771671526/contact_scaled_8ca2bf7adb.jpg'
 
 useSeoMeta({
-  title: `${t(categoryLabel.value)} — Iberia`,
+  title: `${t(categoryLabel.value)} — Bildex`,
   ogTitle: t(categoryLabel.value),
   ogDescription: t('indexDescription'),
   ogImage: OG_IMAGE,

@@ -1,21 +1,21 @@
-<template>
+﻿<template>
   <div>
 
     <!-- Hero -->
     <section class="bg-white pb-16 pt-32 lg:pb-24 lg:pt-40">
       <div class="container mx-auto px-4 text-center lg:px-6">
-        <span class="inline-flex items-center gap-2 rounded-full bg-iberia/10 px-4 py-1.5 text-sm font-semibold text-iberia">
-          <span class="inline-block size-1.5 rounded-full bg-iberia" />
+        <span class="inline-flex items-center gap-2 rounded-full bg-bildex/10 px-4 py-1.5 text-sm font-semibold text-bildex">
+          <span class="inline-block size-1.5 rounded-full bg-bildex" />
           {{ locale === 'es' ? 'Nuestro equipo' : 'ჩვენი გუნდი' }}
         </span>
         <h1 class="mt-5 text-3xl font-bold text-zinc-900 lg:text-5xl">
-          {{ locale === 'es' ? 'Las personas detrás de Iberia' : 'ადამიანები, ვინც ქმნიან იბერიას' }}
+          {{ locale === 'es' ? 'Las personas detrás de Bildex' : 'ადამიანები, ვინც ქმნიან Bildex-ს' }}
         </h1>
         <p class="mx-auto mt-4 max-w-xl text-zinc-500">{{ $t('aboutus5') }}</p>
 
         <!-- Counter pill -->
         <div class="mt-10 inline-flex items-baseline gap-2 rounded-2xl border border-zinc-100 bg-zinc-50 px-7 py-4">
-          <span class="text-4xl font-bold tabular-nums text-iberia">9</span>
+          <span class="text-4xl font-bold tabular-nums text-bildex">9</span>
           <span class="text-sm font-medium text-zinc-500">
             {{ locale === 'es' ? 'profesionales' : 'პროფესიონალი' }}
           </span>
@@ -26,8 +26,8 @@
     <!-- Featured founder -->
     <section class="relative overflow-hidden bg-zinc-900 py-14 lg:py-20">
       <!-- Blobs rojos -->
-      <div class="absolute -right-40 -top-40 size-96 rounded-full bg-iberia/20 blur-3xl" />
-      <div class="absolute -bottom-20 -left-20 size-64 rounded-full bg-iberia/10 blur-3xl" />
+      <div class="absolute -right-40 -top-40 size-96 rounded-full bg-bildex/20 blur-3xl" />
+      <div class="absolute -bottom-20 -left-20 size-64 rounded-full bg-bildex/10 blur-3xl" />
       <!-- Blobs amarillos -->
       <div class="absolute -right-24 top-1/2 size-72 -translate-y-1/2 rounded-full bg-yellow-400/8 blur-3xl" />
       <div class="absolute -top-10 left-1/3 size-56 rounded-full bg-yellow-300/6 blur-3xl" />
@@ -43,14 +43,14 @@
                 class="size-44 rounded-3xl object-cover lg:size-52"
                 loading="eager"
               />
-              <!-- iberia accent dot -->
-              <span class="absolute -bottom-2 -right-2 size-8 rounded-full bg-iberia ring-4 ring-zinc-900" />
+              <!-- Bildex accent dot -->
+              <span class="absolute -bottom-2 -right-2 size-8 rounded-full bg-bildex ring-4 ring-zinc-900" />
             </div>
           </div>
 
           <!-- Text -->
           <div class="text-center sm:text-left">
-            <p class="text-xs font-semibold uppercase tracking-widest text-iberia">
+            <p class="text-xs font-semibold uppercase tracking-widest text-bildex">
               {{ locale === 'es' ? 'Fundadora & Presidenta' : 'დამფუძნებელი & პრეზიდენტი' }}
             </p>
             <h2 class="mt-2 text-2xl font-bold text-white lg:text-3xl">
@@ -97,8 +97,8 @@
             <!-- Gradient overlay -->
             <div class="absolute inset-0 bg-gradient-to-t from-zinc-900 via-zinc-900/30 to-transparent" />
 
-            <!-- iberia line reveal on hover -->
-            <div class="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-iberia transition-transform duration-300 group-hover:scale-x-100" />
+            <!-- Bildex line reveal on hover -->
+            <div class="absolute inset-x-0 bottom-0 h-0.5 origin-left scale-x-0 bg-bildex transition-transform duration-300 group-hover:scale-x-100" />
 
             <!-- Text -->
             <div class="absolute inset-x-0 bottom-0 p-5">
@@ -114,7 +114,7 @@
     <!-- CTA -->
     <section class="border-t border-zinc-100 py-16">
       <div class="container mx-auto px-4 text-center lg:px-6">
-        <p class="text-sm font-semibold uppercase tracking-widest text-iberia">
+        <p class="text-sm font-semibold uppercase tracking-widest text-bildex">
           {{ locale === 'es' ? '¿Quieres saber más?' : 'გინდა მეტი გაიგო?' }}
         </p>
         <h2 class="mt-3 text-2xl font-bold text-zinc-900 lg:text-3xl">
@@ -123,7 +123,7 @@
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <NuxtLink
             :to="localePath('/contact')"
-            class="inline-flex items-center gap-2 rounded-xl bg-iberia px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-iberia-dark"
+            class="inline-flex items-center gap-2 rounded-xl bg-bildex px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-bildex-dark"
           >
             {{ $t('contactus') }}
             <svg class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -153,7 +153,7 @@ const url = useRequestURL()
 const OG_IMAGE = 'https://res.cloudinary.com/dj6draudd/image/upload/v1771671535/kety_914387b234.jpg'
 
 useSeoMeta({
-  title: `${t('ourteam')} — Iberia`,
+  title: `${t('ourteam')} — Bildex`,
   description: t('aboutus5'),
   ogTitle: t('ourteam'),
   ogDescription: t('aboutus5'),

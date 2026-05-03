@@ -13,17 +13,15 @@
         loading="lazy"
       />
       <div v-else class="flex size-full items-center justify-center">
-        <img
-          src="https://res.cloudinary.com/dj6draudd/image/upload/v1771671543/logo_iberia_icon_b2924031c3.svg"
-          alt="Iberia"
-          class="size-12 opacity-20"
-        />
+        <span class="flex size-12 items-center justify-center rounded-lg bg-bildex/10 text-lg font-bold text-bildex/30">
+          B
+        </span>
       </div>
     </div>
 
     <!-- Content -->
     <div class="flex flex-1 flex-col p-5">
-      <h3 class="line-clamp-2 text-base font-semibold text-zinc-800 transition-colors group-hover:text-iberia">
+      <h3 class="line-clamp-2 text-base font-semibold text-zinc-800 transition-colors group-hover:text-bildex">
         {{ post.title }}
       </h3>
 
@@ -37,7 +35,7 @@
         <time v-if="post.date" class="text-xs text-zinc-400">
           {{ formatDate(post.date) }}
         </time>
-        <span class="inline-flex items-center gap-1 text-xs font-medium text-iberia transition-all group-hover:gap-1.5">
+        <span class="inline-flex items-center gap-1 text-xs font-medium text-bildex transition-all group-hover:gap-1.5">
           {{ $t('more') }}
           <svg class="size-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
             <path d="M5 12h14M12 5l7 7-7 7"/>

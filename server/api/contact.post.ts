@@ -11,8 +11,8 @@ export default defineEventHandler(async (event) => {
   const resend = new Resend(config.resendApiKey)
 
   await resend.emails.send({
-    from: 'Iberia Web <onboarding@resend.dev>',
-    to: 'asociacioniberia@gmail.com',
+    from: 'Bildex Web <onboarding@resend.dev>',
+    to: 'info@bildex.com',
     replyTo: email,
     subject: `Mensaje desde la web — ${name}`,
     html: `

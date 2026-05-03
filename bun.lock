@@ -3,7 +3,7 @@
   "configVersion": 1,
   "workspaces": {
     "": {
-      "name": "iberia_new",
+      "name": "bildex",
       "dependencies": {
         "@nuxt/image": "2.0.0",
         "@nuxtjs/i18n": "10.2.3",

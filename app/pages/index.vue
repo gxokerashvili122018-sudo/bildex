@@ -17,15 +17,15 @@
       <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent"></div>
 
       <!-- Decorative blobs -->
-      <div class="absolute -top-40 -right-40 size-96 rounded-full bg-iberia/20 blur-3xl" />
-      <div class="absolute -bottom-20 -left-20 size-64 rounded-full bg-iberia/10 blur-3xl" />
+      <div class="absolute -top-40 -right-40 size-96 rounded-full bg-bildex/20 blur-3xl" />
+      <div class="absolute -bottom-20 -left-20 size-64 rounded-full bg-bildex/10 blur-3xl" />
       <div class="absolute top-1/2 -right-24 size-72 -translate-y-1/2 rounded-full bg-yellow-400/8 blur-3xl" />
       <div class="absolute -top-10 left-1/3 size-56 rounded-full bg-yellow-300/6 blur-3xl" />
 
       <div class="container relative mx-auto px-4 lg:px-6">
         <div class="max-w-3xl">
 
-          <span class="inline-block rounded-full border border-iberia/30 bg-iberia/10 px-4 py-1.5 text-sm font-medium text-iberia">
+          <span class="inline-block rounded-full border border-bildex/30 bg-bildex/10 px-4 py-1.5 text-sm font-medium text-bildex">
             {{ $t('home2') }}
           </span>
 
@@ -41,7 +41,7 @@
 
             <NuxtLink
               :to="localePath('/contact')"
-              class="inline-flex items-center gap-2 rounded-xl bg-iberia px-6 py-3 text-sm font-semibold text-white hover:bg-iberia-dark"
+              class="inline-flex items-center gap-2 rounded-xl bg-bildex px-6 py-3 text-sm font-semibold text-white hover:bg-bildex-dark"
             >
               {{ $t('contactus') }}
             </NuxtLink>
@@ -65,7 +65,7 @@
       <div class="container mx-auto px-4 lg:px-6">
 
         <div class="mb-12">
-          <p class="text-sm font-semibold tracking-wider text-iberia uppercase">Blog</p>
+          <p class="text-sm font-semibold tracking-wider text-bildex uppercase">Blog</p>
           <h2 class="mt-2 text-3xl font-bold text-zinc-800">{{ $t('home4') }}</h2>
         </div>
 

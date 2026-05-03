@@ -50,7 +50,7 @@ export default defineNuxtConfig({
     cloudflarePurgeEverything: process.env.CLOUDFLARE_PURGE_EVERYTHING === 'true',
     cloudflarePurgePaths: process.env.CLOUDFLARE_PURGE_PATHS ?? '/*',
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL ?? 'https://iberiainfo.org',
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL ?? 'https://bildex.com',
       strapiUrl: process.env.STRAPI_URL ?? 'http://localhost:1337',
     },
   },

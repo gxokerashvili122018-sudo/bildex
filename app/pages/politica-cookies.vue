@@ -13,7 +13,7 @@
       <h2>Cómo desactivar las cookies</h2>
       <p>Puede configurar su navegador para rechazar las cookies o para que le avise cuando se envíen. Consulte la ayuda de su navegador para más información.</p>
       <h2>Contacto</h2>
-      <p>Si tiene dudas sobre nuestra política de cookies, puede contactarnos en asociacioniberia@gmail.com.</p>
+      <p>Si tiene dudas sobre nuestra política de cookies, puede contactarnos en info@bildex.com.</p>
     </div>
   </div>
 </template>
@@ -21,5 +21,5 @@
 <script setup lang="ts">
 definePageMeta({ layout: 'default', headerSolid: true })
 const { t } = useI18n()
-useSeoMeta({ title: `${t('cookiespolicy')} — Iberia` })
+useSeoMeta({ title: `${t('cookiespolicy')} — Bildex` })
 </script>

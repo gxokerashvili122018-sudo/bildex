@@ -7,22 +7,15 @@
 
       <!-- Logo -->
       <NuxtLink :to="localePath('/')" class="flex shrink-0 items-center gap-2.5">
-        <img
-          src="https://res.cloudinary.com/dj6draudd/image/upload/v1771671543/logo_iberia_icon_b2924031c3.svg"
-          alt="Iberia"
-          width="36"
-          height="36"
-          class="size-9 transition-all duration-300"
-          :class="solid ? '' : 'brightness-0 invert'"
-        />
-        <img
-          src="https://res.cloudinary.com/dj6draudd/image/upload/v1771671557/logo_iberia_text_1_9fda9ff279.svg"
-          alt="Iberia"
-          width="100"
-          height="30"
-          class="h-[30px] w-auto transition-all duration-300"
-          :class="solid ? '' : 'brightness-0 invert'"
-        />
+        <span class="flex size-9 items-center justify-center rounded-lg bg-bildex text-sm font-bold text-white">
+          B
+        </span>
+        <span
+          class="font-display text-xl font-bold tracking-normal transition-colors"
+          :class="solid ? 'text-zinc-900' : 'text-white'"
+        >
+          Bildex
+        </span>
       </NuxtLink>
 
       <!-- Desktop nav -->
@@ -31,7 +24,7 @@
           :to="localePath('/')"
           class="rounded-lg px-3 py-2 text-sm font-medium transition-colors"
           :class="solid ? 'text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900' : 'text-white hover:bg-white/10'"
-          active-class="!text-iberia"
+          active-class="!text-bildex"
           exact
         >
           {{ $t('home') }}
@@ -64,7 +57,7 @@
                 :key="cat.slug"
                 :to="localePath({ name: 'category-slug', params: { slug: cat.slug } })"
                 class="block rounded-lg px-3 py-2 text-sm text-zinc-600 transition-colors hover:bg-zinc-50 hover:text-zinc-900"
-                active-class="text-iberia bg-zinc-50"
+                active-class="text-bildex bg-zinc-50"
                 @click="newsOpen = false"
               >
                 {{ $t(cat.labelKey) }}
@@ -77,7 +70,7 @@
           :to="localePath('/about')"
           class="rounded-lg px-3 py-2 text-sm font-medium transition-colors"
           :class="solid ? 'text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900' : 'text-white hover:bg-white/10'"
-          active-class="!text-iberia"
+          active-class="!text-bildex"
         >
           {{ $t('aboutus') }}
         </NuxtLink>
@@ -86,7 +79,7 @@
           :to="localePath('/service')"
           class="rounded-lg px-3 py-2 text-sm font-medium transition-colors"
           :class="solid ? 'text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900' : 'text-white hover:bg-white/10'"
-          active-class="!text-iberia"
+          active-class="!text-bildex"
         >
           {{ $t('service') }}
         </NuxtLink>
@@ -95,7 +88,7 @@
           :to="localePath('/contact')"
           class="ml-1 rounded-lg px-3 py-2 text-sm font-medium transition-colors"
           :class="solid ? 'text-zinc-600 hover:bg-zinc-50 hover:text-zinc-900' : 'text-white hover:bg-white/10'"
-          active-class="!text-iberia"
+          active-class="!text-bildex"
         >
           {{ $t('contactus') }}
         </NuxtLink>
@@ -131,7 +124,7 @@
           <NuxtLink
             :to="localePath('/')"
             class="block rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50"
-            active-class="text-iberia bg-iberia/5"
+            active-class="text-bildex bg-bildex/5"
             exact
             @click="menuOpen = false"
           >
@@ -147,7 +140,7 @@
               :key="cat.slug"
               :to="localePath({ name: 'category-slug', params: { slug: cat.slug } })"
               class="block rounded-lg px-3 py-2 pl-5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50"
-              active-class="text-iberia bg-iberia/5"
+              active-class="text-bildex bg-bildex/5"
               @click="menuOpen = false"
             >
               {{ $t(cat.labelKey) }}
@@ -157,7 +150,7 @@
           <NuxtLink
             :to="localePath('/about')"
             class="block rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50"
-            active-class="text-iberia bg-iberia/5"
+            active-class="text-bildex bg-bildex/5"
             @click="menuOpen = false"
           >
             {{ $t('aboutus') }}
@@ -166,7 +159,7 @@
           <NuxtLink
             :to="localePath('/service')"
             class="block rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50"
-            active-class="text-iberia bg-iberia/5"
+            active-class="text-bildex bg-bildex/5"
             @click="menuOpen = false"
           >
             {{ $t('service') }}
@@ -175,7 +168,7 @@
           <NuxtLink
             :to="localePath('/contact')"
             class="block rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50"
-            active-class="text-iberia bg-iberia/5"
+            active-class="text-bildex bg-bildex/5"
             @click="menuOpen = false"
           >
             {{ $t('contactus') }}

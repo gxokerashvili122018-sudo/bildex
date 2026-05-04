@@ -6,10 +6,10 @@
     <!-- Image -->
     <div class="aspect-[16/9] overflow-hidden bg-zinc-100">
       <img
-        v-if="post.featuredImage"
-        :src="post.featuredImage.node.sourceUrl"
+        v-if="cardImage"
+        :src="cardImage"
         :alt="post.title"
-        class="size-full object-cover transition-transform duration-500 group-hover:scale-105"
+        :class="imageOverride ? 'size-full object-contain p-6 transition-transform duration-500 group-hover:scale-105' : 'size-full object-cover transition-transform duration-500 group-hover:scale-105'"
         loading="lazy"
       />
       <div v-else class="flex size-full items-center justify-center">
@@ -49,10 +49,15 @@
 <script setup lang="ts">
 import type { Post } from '~/types/content'
 
-defineProps<{ post: Post }>()
+const props = defineProps<{
+  post: Post
+  imageOverride?: string
+}>()
 
 const localePath = useLocalePath()
 const { locale } = useI18n()
+
+const cardImage = computed(() => props.imageOverride ?? props.post.featuredImage?.node.sourceUrl)
 
 function cleanExcerpt(html: string) {
   return html.replace(/<\/?p>/g, '').trim()

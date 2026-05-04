@@ -73,11 +73,6 @@ const slug = computed(() => route.params.slug as string)
 // Map slug → i18n key para el título
 const categoryLabels: Record<string, string> = {
   news: 'news',
-  events: 'events',
-  activities: 'activities',
-  curiosidades: 'curiosidades',
-  programs: 'programs',
-  tours: 'tours',
 }
 const categoryLabel = computed(() => categoryLabels[slug.value] ?? 'news')
 

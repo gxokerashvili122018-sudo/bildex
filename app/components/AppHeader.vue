@@ -195,11 +195,6 @@ const newsDropdownRef = ref<HTMLElement | null>(null)
 
 const newsCategories = [
   { slug: 'news', labelKey: 'news' },
-  { slug: 'events', labelKey: 'events' },
-  { slug: 'activities', labelKey: 'activities' },
-  { slug: 'curiosidades', labelKey: 'curiosidades' },
-  { slug: 'programs', labelKey: 'programs' },
-  { slug: 'tours', labelKey: 'tours' },
 ]
 
 onMounted(() => {

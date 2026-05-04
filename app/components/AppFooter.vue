@@ -147,9 +147,5 @@ const mainLinks = [
 
 const newsCategories = [
   { slug: 'news', labelKey: 'news' },
-  { slug: 'events', labelKey: 'events' },
-  { slug: 'activities', labelKey: 'activities' },
-  { slug: 'programs', labelKey: 'programs' },
-  { slug: 'tours', labelKey: 'tours' },
 ]
 </script>

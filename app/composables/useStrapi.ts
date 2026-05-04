@@ -48,9 +48,9 @@ function mapPost(item: StrapiPost): Post {
 }
 
 export async function getHomePosts(locale: string): Promise<Post[]> {
-  const endpoint = locale === 'es' ? 'entradas' : 'georgians'
+  const endpoint = locale === 'ge' ? 'bildex-georgians' : 'bildexes'
   const res = await strapiGet<StrapiPost[]>(
-    `${endpoint}?filters[category][slug][$eq]=home&populate=cover&pagination[pageSize]=3&sort=publishedAt:desc`,
+    `${endpoint}?filters[category][slug][$eq]=news&populate=cover&pagination[pageSize]=3&sort=publishedAt:desc`,
   )
   return (res.data ?? []).map(mapPost)
 }
@@ -62,7 +62,7 @@ export async function getPostsByCategory(
 ): Promise<PostsConnection> {
   const page = after ? parseInt(after, 10) : 1
   const res = await strapiGet<StrapiPost[]>(
-    `entradas?filters[category][slug][$eq]=${slug}&populate=cover&pagination[page]=${page}&pagination[pageSize]=${first}&sort=publishedAt:desc`,
+    `bildexes?filters[category][slug][$eq]=${slug}&populate=cover&pagination[page]=${page}&pagination[pageSize]=${first}&sort=publishedAt:desc`,
   )
   const p = res.meta.pagination
   return {
@@ -81,7 +81,7 @@ export async function getGeoPostsByCategory(
 ): Promise<PostsConnection> {
   const page = after ? parseInt(after, 10) : 1
   const res = await strapiGet<StrapiPost[]>(
-    `georgians?filters[category][slug][$eq]=${slug}&populate=cover&pagination[page]=${page}&pagination[pageSize]=${first}&sort=publishedAt:desc`,
+    `bildex-georgians?filters[category][slug][$eq]=${slug}&populate=cover&pagination[page]=${page}&pagination[pageSize]=${first}&sort=publishedAt:desc`,
   )
   const p = res.meta.pagination
   return {
@@ -95,7 +95,7 @@ export async function getGeoPostsByCategory(
 
 export async function getPostBySlug(slug: string): Promise<Post | null> {
   const res = await strapiGet<StrapiPost[]>(
-    `entradas?filters[slug][$eq]=${slug}&populate=cover`,
+    `bildexes?filters[slug][$eq]=${slug}&populate=cover`,
   )
   const items = res.data ?? []
   return items.length ? mapPost(items[0]) : null
@@ -103,7 +103,7 @@ export async function getPostBySlug(slug: string): Promise<Post | null> {
 
 export async function getGeoPostBySlug(slug: string): Promise<Post | null> {
   const res = await strapiGet<StrapiPost[]>(
-    `georgians?filters[slug][$eq]=${slug}&populate=cover`,
+    `bildex-georgians?filters[slug][$eq]=${slug}&populate=cover`,
   )
   const items = res.data ?? []
   return items.length ? mapPost(items[0]) : null
@@ -111,8 +111,8 @@ export async function getGeoPostBySlug(slug: string): Promise<Post | null> {
 
 export async function getAllCategories(): Promise<Category[]> {
   const [esRes, geRes] = await Promise.all([
-    strapiGet<Category[]>('entrada-categories?fields[0]=name&fields[1]=slug&pagination[pageSize]=100'),
-    strapiGet<Category[]>('georgian-categories?fields[0]=name&fields[1]=slug&pagination[pageSize]=100'),
+    strapiGet<Category[]>('bildex-categories?fields[0]=name&fields[1]=slug&pagination[pageSize]=100'),
+    strapiGet<Category[]>('bildex-georgian-categories?fields[0]=name&fields[1]=slug&pagination[pageSize]=100'),
   ])
   const all = [...(esRes.data ?? []), ...(geRes.data ?? [])]
   const seen = new Set<string>()
@@ -125,8 +125,8 @@ export async function getAllCategories(): Promise<Category[]> {
 
 export async function getAllPostSlugs(): Promise<string[]> {
   const [esRes, geRes] = await Promise.all([
-    strapiGet<{ slug: string }[]>('entradas?fields[0]=slug&pagination[pageSize]=1000'),
-    strapiGet<{ slug: string }[]>('georgians?fields[0]=slug&pagination[pageSize]=1000'),
+    strapiGet<{ slug: string }[]>('bildexes?fields[0]=slug&pagination[pageSize]=1000'),
+    strapiGet<{ slug: string }[]>('bildex-georgians?fields[0]=slug&pagination[pageSize]=1000'),
   ])
   return [
     ...(esRes.data ?? []).map(p => p.slug),

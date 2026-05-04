@@ -36,7 +36,12 @@
         <!-- Grid -->
         <div v-else>
           <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            <PostCard v-for="post in posts" :key="post.id" :post="post" />
+            <PostCard
+              v-for="post in posts"
+              :key="post.id"
+              :post="post"
+              image-override="/bildex-logo-transparent.png"
+            />
           </div>
 
           <!-- Load more -->

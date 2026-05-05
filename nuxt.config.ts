@@ -62,11 +62,12 @@ export default defineNuxtConfig({
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-        { name: 'theme-color', content: '#c8102e' },
+        { name: 'theme-color', content: '#0E3386' },
         { name: 'robots', content: 'index, follow' },
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        { rel: 'icon', type: 'image/png', href: '/bildex-logo-transparent.png' },
+        { rel: 'apple-touch-icon', href: '/bildex-logo-transparent.png' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: 'anonymous' as const },
         {

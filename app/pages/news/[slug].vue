@@ -106,6 +106,7 @@ import { getPostBySlug, getGeoPostBySlug } from '~/composables/useStrapi'
 const route = useRoute()
 const { locale, t } = useI18n()
 const localePath = useLocalePath()
+const config = useRuntimeConfig()
 
 const slug = computed(() => route.params.slug as string)
 
@@ -146,6 +147,7 @@ const postImage = computed(() =>
   post.value?.featuredImage?.node.sourceUrl
   ?? 'https://res.cloudinary.com/dj6draudd/image/upload/v1771671526/contact_scaled_8ca2bf7adb.jpg',
 )
+const logoUrl = computed(() => new URL('/bildex-logo-transparent.png', config.public.siteUrl).href)
 
 useSeoMeta({
   title: computed(() => `${postTitle.value} — Bildex`),
@@ -178,7 +180,7 @@ useHead({
         name: 'Bildex',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://res.cloudinary.com/dj6draudd/image/upload/v1771671618/logo_1404f77b5f.png',
+          url: logoUrl.value,
         },
       },
       mainEntityOfPage: { '@type': 'WebPage', '@id': url.href },

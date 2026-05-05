@@ -1,5 +1,5 @@
 <template>
-  <footer class="bg-zinc-900 text-zinc-400">
+  <footer class="text-zinc-400" style="background-color: #0a2351;">
 
     <div class="container mx-auto px-4 py-14 lg:px-6">
       <div class="grid gap-10 lg:grid-cols-4">
@@ -118,7 +118,7 @@
     </div>
 
     <!-- Bottom bar -->
-    <div class="border-t border-zinc-800">
+    <div class="border-t" style="background-color: #002147; border-color: #002147;">
       <div class="container mx-auto flex flex-col items-center justify-between gap-3 px-4 py-5 text-xs sm:flex-row lg:px-6">
         <p>© {{ new Date().getFullYear() }} Bildex.com. Todos los derechos reservados.</p>
         <div class="flex items-center gap-4">

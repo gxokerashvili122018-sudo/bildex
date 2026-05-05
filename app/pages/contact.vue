@@ -126,7 +126,7 @@
                 </p>
               </div>
 
-              <p v-if="showError" class="text-sm text-red-500">{{ $t('contact4') }}</p>
+              <p v-if="showError" class="text-sm text-bildex">{{ $t('contact4') }}</p>
 
               <!-- Success message -->
               <div v-if="success" class="rounded-xl bg-green-50 border border-green-100 p-4">

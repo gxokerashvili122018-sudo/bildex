@@ -65,7 +65,7 @@ function cleanExcerpt(html: string) {
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString(
-    locale.value === 'ge' ? 'ka-GE' : 'es-ES',
+    locale.value === 'ge' ? 'ka-GE' : 'de-DE',
     { year: 'numeric', month: 'long', day: 'numeric' },
   )
 }

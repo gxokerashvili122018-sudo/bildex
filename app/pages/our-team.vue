@@ -6,10 +6,10 @@
       <div class="container mx-auto px-4 text-center lg:px-6">
         <span class="inline-flex items-center gap-2 rounded-full bg-bildex/10 px-4 py-1.5 text-sm font-semibold text-bildex">
           <span class="inline-block size-1.5 rounded-full bg-bildex" />
-          {{ locale === 'es' ? 'Nuestro equipo' : 'ჩვენი გუნდი' }}
+          {{ locale === 'ge' ? 'ჩვენი გუნდი' : 'Unser Team' }}
         </span>
         <h1 class="mt-5 text-3xl font-bold text-zinc-900 lg:text-5xl">
-          {{ locale === 'es' ? 'Las personas detrás de Bildex' : 'ადამიანები, ვინც ქმნიან Bildex-ს' }}
+          {{ locale === 'ge' ? 'ადამიანები, ვინც ქმნიან Bildex-ს' : 'Die Menschen hinter Bildex' }}
         </h1>
         <p class="mx-auto mt-4 max-w-xl text-zinc-500">{{ $t('aboutus5') }}</p>
 
@@ -17,7 +17,7 @@
         <div class="mt-10 inline-flex items-baseline gap-2 rounded-2xl border border-zinc-100 bg-zinc-50 px-7 py-4">
           <span class="text-4xl font-bold tabular-nums text-bildex">9</span>
           <span class="text-sm font-medium text-zinc-500">
-            {{ locale === 'es' ? 'profesionales' : 'პროფესიონალი' }}
+            {{ locale === 'ge' ? 'პროფესიონალი' : 'Fachleute' }}
           </span>
         </div>
       </div>
@@ -51,7 +51,7 @@
           <!-- Text -->
           <div class="text-center sm:text-left">
             <p class="text-xs font-semibold uppercase tracking-widest text-bildex">
-              {{ locale === 'es' ? 'Fundadora & Presidenta' : 'დამფუძნებელი & პრეზიდენტი' }}
+              {{ locale === 'ge' ? 'დამფუძნებელი & პრეზიდენტი' : 'Gründerin & Präsidentin' }}
             </p>
             <h2 class="mt-2 text-2xl font-bold text-white lg:text-3xl">
               {{ teamMembers[0].name }}
@@ -68,7 +68,7 @@
       <div class="container mx-auto px-4 lg:px-6">
 
         <p class="mb-10 text-center text-xs font-semibold uppercase tracking-widest text-zinc-400">
-          {{ locale === 'es' ? 'El resto del equipo' : 'დანარჩენი გუნდი' }}
+          {{ locale === 'ge' ? 'დანარჩენი გუნდი' : 'Das weitere Team' }}
         </p>
 
         <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -115,10 +115,10 @@
     <section class="border-t border-zinc-100 py-16">
       <div class="container mx-auto px-4 text-center lg:px-6">
         <p class="text-sm font-semibold uppercase tracking-widest text-bildex">
-          {{ locale === 'es' ? '¿Quieres saber más?' : 'გინდა მეტი გაიგო?' }}
+          {{ locale === 'ge' ? 'გინდა მეტი გაიგო?' : 'Möchten Sie mehr erfahren?' }}
         </p>
         <h2 class="mt-3 text-2xl font-bold text-zinc-900 lg:text-3xl">
-          {{ locale === 'es' ? 'Estamos aquí para ayudarte' : 'ჩვენ აქ ვართ შენი დასახმარებლად' }}
+          {{ locale === 'ge' ? 'ჩვენ აქ ვართ შენი დასახმარებლად' : 'Wir sind hier, um zu helfen' }}
         </h2>
         <div class="mt-8 flex flex-wrap justify-center gap-4">
           <NuxtLink

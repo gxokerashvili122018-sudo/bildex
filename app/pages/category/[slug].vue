@@ -84,9 +84,9 @@ const categoryLabel = computed(() => categoryLabels[slug.value] ?? 'news')
 // SSR: carga inicial (clave estática, sin reactividad de Nuxt)
 const { data: ssrData } = await useAsyncData(
   `category-${slug.value}-${locale.value}`,
-  () => locale.value === 'es'
-    ? getPostsByCategory(slug.value, 9)
-    : getGeoPostsByCategory(slug.value, 9),
+  () => locale.value === 'ge'
+    ? getGeoPostsByCategory(slug.value, 9)
+    : getPostsByCategory(slug.value, 9),
 )
 
 // Estado reactivo — se inicializa con los datos SSR
@@ -105,9 +105,9 @@ watch([slug, locale], async ([newSlug]) => {
   hasNextPage.value = false
   endCursor.value = null
   try {
-    const data = locale.value === 'es'
-      ? await getPostsByCategory(newSlug, 9)
-      : await getGeoPostsByCategory(newSlug, 9)
+    const data = locale.value === 'ge'
+      ? await getGeoPostsByCategory(newSlug, 9)
+      : await getPostsByCategory(newSlug, 9)
     posts.value = data.edges.map(e => e.node)
     hasNextPage.value = data.pageInfo.hasNextPage
     endCursor.value = data.pageInfo.endCursor
@@ -125,9 +125,9 @@ async function loadMore() {
   loadingMore.value = true
 
   try {
-    const more = locale.value === 'es'
-      ? await getPostsByCategory(slug.value, 9, endCursor.value ?? undefined)
-      : await getGeoPostsByCategory(slug.value, 9, endCursor.value ?? undefined)
+    const more = locale.value === 'ge'
+      ? await getGeoPostsByCategory(slug.value, 9, endCursor.value ?? undefined)
+      : await getPostsByCategory(slug.value, 9, endCursor.value ?? undefined)
 
     if (more) {
       posts.value.push(...more.edges.map(e => e.node))

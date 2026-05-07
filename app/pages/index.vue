@@ -26,7 +26,7 @@
         <div class="max-w-3xl">
 
           <span class="inline-block rounded-full border border-bildex/30 bg-bildex/10 px-4 py-1.5 text-sm font-medium text-bildex">
-            საერთაშორისო ცენტრი
+            {{ locale === 'ge' ? 'საერთაშორისო ცენტრი' : 'Internationales Zentrum' }}
           </span>
 
           <h1 class="mt-6 max-w-4xl leading-tight text-zinc-900">
@@ -34,7 +34,7 @@
               BILDEX
             </span>
             <span class="mt-4 block font-display text-lg font-bold lg:text-2xl xl:text-3xl">
-              განათლების, პრაქტიკისა და კარიერული განვითარების საერთაშორისო ცენტრი
+              {{ locale === 'ge' ? 'განათლების, პრაქტიკისა და კარიერული განვითარების საერთაშორისო ცენტრი' : 'Internationales Zentrum fuer Bildung, Praxis und Karriereentwicklung' }}
             </span>
           </h1>
 
@@ -106,12 +106,17 @@ const { data: posts, pending } = await useAsyncData(
 
 const url = useRequestURL()
 const OG_IMAGE = 'https://res.cloudinary.com/dj6draudd/image/upload/v1777908914/0_06c5a89adc.png'
+const seoDescription = computed(() =>
+  locale.value === 'ge'
+    ? 'BILDEX - განათლების, პრაქტიკისა და კარიერული განვითარების საერთაშორისო ცენტრი'
+    : 'BILDEX - Internationales Zentrum fuer Bildung, Praxis und Karriereentwicklung',
+)
 
 useSeoMeta({
-  title: 'BILDEX - განათლების, პრაქტიკისა და კარიერული განვითარების საერთაშორისო ცენტრი',
-  description: 'BILDEX - განათლების, პრაქტიკისა და კარიერული განვითარების საერთაშორისო ცენტრი',
-  ogTitle: 'BILDEX - განათლების, პრაქტიკისა და კარიერული განვითარების საერთაშორისო ცენტრი',
-  ogDescription: 'BILDEX - განათლების, პრაქტიკისა და კარიერული განვითარების საერთაშორისო ცენტრი',
+  title: seoDescription,
+  description: seoDescription,
+  ogTitle: seoDescription,
+  ogDescription: seoDescription,
   ogImage: OG_IMAGE,
   ogUrl: url.href,
   ogType: 'website',

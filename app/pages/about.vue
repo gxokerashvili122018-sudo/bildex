@@ -23,7 +23,7 @@
               </svg>
             </div>
             <h2 class="mt-5 text-xl font-bold text-zinc-800 lg:text-2xl">
-              {{ locale === 'es' ? 'Nuestra misión' : 'ჩვენი მისია' }}
+              {{ locale === 'ge' ? 'ჩვენი მისია' : 'Unsere Mission' }}
             </h2>
             <p class="mt-4 text-sm leading-relaxed text-zinc-500 lg:text-base">{{ $t('aboutus2') }}</p>
           </div>
@@ -37,7 +37,7 @@
               </svg>
             </div>
             <h2 class="mt-5 text-xl font-bold text-zinc-800 lg:text-2xl">
-              {{ locale === 'es' ? 'Nuestra historia' : 'ჩვენი ისტორია' }}
+              {{ locale === 'ge' ? 'ჩვენი ისტორია' : 'Unsere Geschichte' }}
             </h2>
             <div class="mt-4 text-sm leading-relaxed text-zinc-500 lg:text-base" v-html="$t('aboutus1_html')" />
           </div>
@@ -51,27 +51,27 @@
       <div class="container mx-auto px-4 lg:px-6">
         <div class="mb-14 text-center">
           <p class="text-sm font-semibold tracking-wider text-bildex uppercase">
-            {{ locale === 'es' ? 'Lo que nos define' : 'ჩვენი ღირებულებები' }}
+            {{ locale === 'ge' ? 'ჩვენი ღირებულებები' : 'Was uns ausmacht' }}
           </p>
           <h2 class="mt-3 text-3xl font-bold text-zinc-800">
-            {{ locale === 'es' ? 'Nuestros valores' : 'ჩვენი ფასეულობები' }}
+            {{ locale === 'ge' ? 'ჩვენი ფასეულობები' : 'Unsere Werte' }}
           </h2>
         </div>
 
         <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           <div
             v-for="value in values"
-            :key="value.titleEs"
+            :key="value.titleDe"
             class="rounded-2xl bg-white p-8"
           >
             <div class="flex size-11 items-center justify-center rounded-xl bg-bildex/10">
               <component :is="value.icon" class="size-5 text-bildex" />
             </div>
             <h3 class="mt-5 font-semibold text-zinc-800">
-              {{ locale === 'es' ? value.titleEs : value.titleGe }}
+              {{ locale === 'ge' ? value.titleGe : value.titleDe }}
             </h3>
             <p class="mt-2 text-sm leading-relaxed text-zinc-500">
-              {{ locale === 'es' ? value.descEs : value.descGe }}
+              {{ locale === 'ge' ? value.descGe : value.descDe }}
             </p>
           </div>
         </div>
@@ -83,7 +83,7 @@
       <div class="container mx-auto px-4 lg:px-6">
         <div class="mx-auto max-w-2xl text-center">
           <p class="text-sm font-semibold tracking-wider text-bildex uppercase">
-            {{ locale === 'es' ? 'En detalle' : 'დეტალურად' }}
+            {{ locale === 'ge' ? 'დეტალურად' : 'Im Detail' }}
           </p>
           <div
             class="mt-5 text-lg leading-relaxed text-zinc-500"
@@ -138,7 +138,7 @@ useSeoMeta({
   ogImage: OG_IMAGE,
   ogUrl: url.href,
   ogType: 'website',
-  ogLocale: locale.value === 'ge' ? 'ka_GE' : 'es_ES',
+  ogLocale: locale.value === 'ge' ? 'ka_GE' : 'de_DE',
   twitterTitle: t('aboutus'),
   twitterDescription: t('aboutus7'),
   twitterImage: OG_IMAGE,
@@ -196,44 +196,44 @@ const IconStar = makeIcon([
 const values = [
   {
     icon: IconTeam,
-    titleEs: 'Equipo profesional',
+    titleDe: 'Professionelles Team',
     titleGe: 'პროფესიონალური გუნდი',
-    descEs: 'Un equipo de profesionales dispuestos a ayudar en cualquier momento.',
+    descDe: 'Ein Team von Fachleuten, das jederzeit bereit ist zu helfen.',
     descGe: 'პროფესიონალებით დაკომპლექტებული გუნდი, მზად დასახმარებლად ნებისმიერ დროს.',
   },
   {
     icon: IconHandshake,
-    titleEs: 'Confianza y trabajo en equipo',
+    titleDe: 'Vertrauen und Teamarbeit',
     titleGe: 'ნდობა და გუნდური მუშაობა',
-    descEs: 'La confianza mutua y la colaboración son la base de todo lo que hacemos.',
+    descDe: 'Gegenseitiges Vertrauen und Zusammenarbeit sind die Grundlage unserer Arbeit.',
     descGe: 'ურთიერთსანდოობა და გუნდური მუშაობა ჩვენი საქმიანობის საფუძველია.',
   },
   {
     icon: IconScale,
-    titleEs: 'Ética y justicia',
+    titleDe: 'Ethik und Gerechtigkeit',
     titleGe: 'ეთიკა და სამართლიანობა',
-    descEs: 'Actuamos siempre con ética, justicia y alta responsabilidad social.',
+    descDe: 'Wir handeln stets mit Ethik, Gerechtigkeit und hoher sozialer Verantwortung.',
     descGe: 'ვმოქმედებთ ეთიკით, სამართლიანობითა და მაღალი სოციალური პასუხისმგებლობით.',
   },
   {
     icon: IconTrending,
-    titleEs: 'Desarrollo constante',
+    titleDe: 'Ständige Weiterentwicklung',
     titleGe: 'მუდმივი განვითარება',
-    descEs: 'Buscamos siempre la innovación y la mejora continua en todo lo que ofrecemos.',
+    descDe: 'Wir suchen ständig nach Innovation und kontinuierlicher Verbesserung.',
     descGe: 'მუდმივად ვეძებთ სიახლეს და გაუმჯობესებას ყველაფერში, რასაც ვთავაზობთ.',
   },
   {
     icon: IconEye,
-    titleEs: 'Transparencia',
+    titleDe: 'Transparenz',
     titleGe: 'გამჭვირვალეობა',
-    descEs: 'Todos nuestros procesos son transparentes y abiertos para quienes confían en nosotros.',
+    descDe: 'Unsere Prozesse sind transparent und offen für alle, die uns vertrauen.',
     descGe: 'ჩვენი ყველა პროცესი გამჭვირვალეა იმათ წინაშე, ვინც გვენდობა.',
   },
   {
     icon: IconStar,
-    titleEs: 'Responsabilidad social',
+    titleDe: 'Soziale Verantwortung',
     titleGe: 'სოციალური პასუხისმგებლობა',
-    descEs: 'Nos comprometemos con el impacto positivo en las comunidades que servimos.',
+    descDe: 'Wir setzen uns für eine positive Wirkung in den Gemeinschaften ein, denen wir dienen.',
     descGe: 'ვიღებთ ვალდებულებას დადებითი გავლენა მოვახდინოთ იმ თემებზე, რომლებსაც ვემსახურებით.',
   },
 ]

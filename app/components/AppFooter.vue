@@ -120,7 +120,7 @@
     <!-- Bottom bar -->
     <div class="border-t" style="background-color: #002147; border-color: #002147;">
       <div class="container mx-auto flex flex-col items-center justify-between gap-3 px-4 py-5 text-xs sm:flex-row lg:px-6">
-        <p>© {{ new Date().getFullYear() }} Bildex.com. Todos los derechos reservados.</p>
+        <p>© {{ new Date().getFullYear() }} Bildex.com. {{ locale === 'ge' ? 'Todos los derechos reservados.' : 'Alle Rechte vorbehalten.' }}</p>
         <div class="flex items-center gap-4">
           <NuxtLink :to="localePath('/politica-de-privacidad')" class="transition-colors hover:text-white">
             {{ $t('privacypolicy') }}
@@ -136,6 +136,7 @@
 
 <script setup lang="ts">
 const localePath = useLocalePath()
+const { locale } = useI18n()
 
 const mainLinks = [
   { to: '/', labelKey: 'home' },

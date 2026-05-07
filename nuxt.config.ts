@@ -23,13 +23,13 @@ export default defineNuxtConfig({
     customComponent: 'Icon',
   },
 
-  // i18n: Español (default) + Georgiano
+  // i18n: Deutsch (default) + Georgiano
   i18n: {
     locales: [
-      { code: 'es', name: 'Español', file: 'es.json' },
+      { code: 'de', name: 'Deutsch', file: 'de.json' },
       { code: 'ge', name: 'ქართული', file: 'ge.json' },
     ],
-    defaultLocale: 'es',
+    defaultLocale: 'de',
     langDir: 'locales/',
     strategy: 'prefix_except_default',
     detectBrowserLanguage: false,
@@ -58,7 +58,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      htmlAttrs: { lang: 'es' },
+      htmlAttrs: { lang: 'de' },
       meta: [
         { charset: 'utf-8' },
         { name: 'viewport', content: 'width=device-width, initial-scale=1' },

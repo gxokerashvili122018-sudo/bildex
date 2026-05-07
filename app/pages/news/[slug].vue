@@ -112,9 +112,9 @@ const slug = computed(() => route.params.slug as string)
 
 const { data: post, pending } = await useAsyncData(
   () => `post-${slug.value}-${locale.value}`,
-  () => locale.value === 'es'
-    ? getPostBySlug(slug.value)
-    : getGeoPostBySlug(slug.value),
+  () => locale.value === 'ge'
+    ? getGeoPostBySlug(slug.value)
+    : getPostBySlug(slug.value),
   { watch: [slug, locale] },
 )
 
@@ -124,7 +124,7 @@ function cleanExcerpt(html: string) {
 
 function formatDate(dateStr: string) {
   return new Date(dateStr).toLocaleDateString(
-    locale.value === 'ge' ? 'ka-GE' : 'es-ES',
+    locale.value === 'ge' ? 'ka-GE' : 'de-DE',
     { year: 'numeric', month: 'long', day: 'numeric' },
   )
 }
@@ -157,7 +157,7 @@ useSeoMeta({
   ogImage: postImage,
   ogUrl: url.href,
   ogType: 'article',
-  ogLocale: computed(() => locale.value === 'ge' ? 'ka_GE' : 'es_ES'),
+  ogLocale: computed(() => locale.value === 'ge' ? 'ka_GE' : 'de_DE'),
   articlePublishedTime: computed(() => post.value?.date ?? undefined),
   twitterTitle: postTitle,
   twitterDescription: postDescription,
@@ -174,7 +174,7 @@ useHead({
       headline: post.value.title,
       datePublished: post.value.date,
       image: post.value.featuredImage?.node.sourceUrl,
-      inLanguage: locale.value === 'ge' ? 'ka' : 'es',
+      inLanguage: locale.value === 'ge' ? 'ka' : 'de',
       publisher: {
         '@type': 'Organization',
         name: 'Bildex',

@@ -37,7 +37,7 @@
               </svg>
             </div>
             <h2 class="mt-5 text-xl font-bold text-zinc-800 lg:text-2xl">
-              {{ locale === 'ge' ? 'ჩვენი ისტორია' : 'Unsere Geschichte' }}
+              {{ locale === 'ge' ? 'ჩვენი ხედვა' : 'Unsere Vision' }}
             </h2>
             <div class="mt-4 text-sm leading-relaxed text-zinc-500 lg:text-base" v-html="$t('aboutus1_html')" />
           </div>

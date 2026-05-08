@@ -2,6 +2,7 @@
   "name": "bildex",
   "type": "module",
   "private": true,
+  "version": "1.0.1",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",

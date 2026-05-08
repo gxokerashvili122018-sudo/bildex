@@ -74,6 +74,24 @@ export async function getPostsByCategory(
   }
 }
 
+export async function getPosts(
+  first = 9,
+  after?: string,
+): Promise<PostsConnection> {
+  const page = after ? parseInt(after, 10) : 1
+  const res = await strapiGet<StrapiPost[]>(
+    `bildexes?populate=cover&pagination[page]=${page}&pagination[pageSize]=${first}&sort=publishedAt:desc`,
+  )
+  const p = res.meta.pagination
+  return {
+    pageInfo: {
+      hasNextPage: p.page < p.pageCount,
+      endCursor: p.page < p.pageCount ? String(p.page + 1) : null,
+    },
+    edges: (res.data ?? []).map(item => ({ node: mapPost(item) })),
+  }
+}
+
 export async function getGeoPostsByCategory(
   slug: string,
   first = 9,
@@ -82,6 +100,24 @@ export async function getGeoPostsByCategory(
   const page = after ? parseInt(after, 10) : 1
   const res = await strapiGet<StrapiPost[]>(
     `bildex-georgians?filters[category][slug][$eq]=${slug}&populate=cover&pagination[page]=${page}&pagination[pageSize]=${first}&sort=publishedAt:desc`,
+  )
+  const p = res.meta.pagination
+  return {
+    pageInfo: {
+      hasNextPage: p.page < p.pageCount,
+      endCursor: p.page < p.pageCount ? String(p.page + 1) : null,
+    },
+    edges: (res.data ?? []).map(item => ({ node: mapPost(item) })),
+  }
+}
+
+export async function getGeoPosts(
+  first = 9,
+  after?: string,
+): Promise<PostsConnection> {
+  const page = after ? parseInt(after, 10) : 1
+  const res = await strapiGet<StrapiPost[]>(
+    `bildex-georgians?populate=cover&pagination[page]=${page}&pagination[pageSize]=${first}&sort=publishedAt:desc`,
   )
   const p = res.meta.pagination
   return {

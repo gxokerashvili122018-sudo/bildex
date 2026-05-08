@@ -3,7 +3,7 @@
     class="fixed inset-x-0 top-0 z-50 overflow-hidden transition-all duration-300"
     :class="solid ? 'bg-white/95 shadow-sm backdrop-blur-sm' : 'border-b border-white/8 bg-zinc-900/30 backdrop-blur-xl'"
   >
-    <div class="container mx-auto flex h-20 items-center justify-between px-4 lg:px-6">
+    <div class="container relative mx-auto flex h-20 items-center justify-between px-4 lg:px-6">
 
       <!-- Logo -->
       <NuxtLink :to="localePath('/')" class="flex shrink-0 items-center">
@@ -17,7 +17,7 @@
       </NuxtLink>
 
       <!-- Desktop nav -->
-      <nav class="font-display hidden items-center gap-1 lg:flex">
+      <nav class="font-display absolute left-1/2 hidden -translate-x-1/2 items-center gap-1 lg:flex">
         <NuxtLink
           :to="localePath('/')"
           class="rounded-lg px-3 py-2 text-sm font-medium transition-colors"

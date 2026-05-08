@@ -67,7 +67,7 @@
 
 <script setup lang="ts">
 import type { Post } from '~/types/content'
-import { getPostsByCategory, getGeoPostsByCategory } from '~/composables/useStrapi'
+import { getPosts, getPostsByCategory, getGeoPosts, getGeoPostsByCategory } from '~/composables/useStrapi'
 
 const route = useRoute()
 const { locale, t } = useI18n()
@@ -81,12 +81,22 @@ const categoryLabels: Record<string, string> = {
 }
 const categoryLabel = computed(() => categoryLabels[slug.value] ?? 'news')
 
+function getCategoryPosts(categorySlug: string, first = 9, after?: string) {
+  if (categorySlug === 'news') {
+    return locale.value === 'ge'
+      ? getGeoPosts(first, after)
+      : getPosts(first, after)
+  }
+
+  return locale.value === 'ge'
+    ? getGeoPostsByCategory(categorySlug, first, after)
+    : getPostsByCategory(categorySlug, first, after)
+}
+
 // SSR: carga inicial (clave estática, sin reactividad de Nuxt)
 const { data: ssrData } = await useAsyncData(
   `category-${slug.value}-${locale.value}`,
-  () => locale.value === 'ge'
-    ? getGeoPostsByCategory(slug.value, 9)
-    : getPostsByCategory(slug.value, 9),
+  () => getCategoryPosts(slug.value, 9),
 )
 
 // Estado reactivo — se inicializa con los datos SSR
@@ -105,9 +115,7 @@ watch([slug, locale], async ([newSlug]) => {
   hasNextPage.value = false
   endCursor.value = null
   try {
-    const data = locale.value === 'ge'
-      ? await getGeoPostsByCategory(newSlug, 9)
-      : await getPostsByCategory(newSlug, 9)
+    const data = await getCategoryPosts(newSlug, 9)
     posts.value = data.edges.map(e => e.node)
     hasNextPage.value = data.pageInfo.hasNextPage
     endCursor.value = data.pageInfo.endCursor
@@ -125,9 +133,7 @@ async function loadMore() {
   loadingMore.value = true
 
   try {
-    const more = locale.value === 'ge'
-      ? await getGeoPostsByCategory(slug.value, 9, endCursor.value ?? undefined)
-      : await getPostsByCategory(slug.value, 9, endCursor.value ?? undefined)
+    const more = await getCategoryPosts(slug.value, 9, endCursor.value ?? undefined)
 
     if (more) {
       posts.value.push(...more.edges.map(e => e.node))

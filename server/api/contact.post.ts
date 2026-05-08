@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
 
   await resend.emails.send({
     from: 'Bildex Web <onboarding@resend.dev>',
-    to: 'info@bildex.com',
+    to: 'g.xokerashvili122018@gmail.com',
     replyTo: email,
     subject: `Mensaje desde la web — ${name}`,
     html: `
